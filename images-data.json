@@ -1,0 +1,40 @@
+{
+  "images": [
+    {
+      "src": "gallery/1.png.png",
+      "alt": "CSKIA Gallery Image 1"
+    },
+    {
+      "src": "gallery/2.png.png",
+      "alt": "CSKIA Gallery Image 2"
+    },
+    {
+      "src": "gallery/3.png.png",
+      "alt": "CSKIA Gallery Image 3"
+    },
+    {
+      "src": "gallery/4.png.png",
+      "alt": "CSKIA Gallery Image 4"
+    },
+    {
+      "src": "gallery/5.png.png",
+      "alt": "CSKIA Gallery Image 5"
+    },
+    {
+      "src": "gallery/6.png.png",
+      "alt": "CSKIA Gallery Image 6"
+    },
+    {
+      "src": "gallery/7.png.png",
+      "alt": "CSKIA Gallery Image 7"
+    },
+    {
+      "src": "gallery/8.png.png11",
+      "alt": "CSKIA Gallery Image 8"
+    },
+    {
+      "src": "gallery/9.png.png",
+      "alt": "CSKIA Gallery Image 9"
+    }
+  ]
+}

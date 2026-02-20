@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "id": "shimoga-2025",
+      "title": "6th Shimoga International Karate Championships -2025",
+      "schedule": "on-21 august 2025",
+      "enrollLink": "tel:+919611693004",
+      "active": true
+    },
+    {
+      "id": "champions-cup-2026",
+      "title": "5th champions cup-2026",
+      "schedule": "on-11 january 2026",
+      "enrollLink": "tel:+919611693004",
+      "active": true
+    },
+    {
+      "id": "udupi-2025",
+      "title": "2nd udupi international karate championship-2026",
+      "schedule": "on 19-24 december-2026",
+      "enrollLink": "tel:+919611693004",
+      "active": true
+    }
+  ],
+  "noEventsMessage": "No upcoming events at the moment. Check back soon!"
+}
