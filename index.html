@@ -1,16 +1,21 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Champion Shotokan Karate Indian Association</title>
-  <meta name="description" content="Discipline, Strength, Honor — Champion Shotokan Karate Indian Association, Whitefield Bangalore. Classes for kids and adults." />
+  <meta name="description" content="Discipline, Strength, Honor — Champion Shotokan Karate Indian Association, Bangalore." />
   <meta name="keywords" content="shotokan karate, martial arts, Bangalore, karate classes, CSKIA India, dojo training" />
   <meta property="og:title" content="Champion Shotokan Karate Indian Association" />
-  <meta property="og:description" content="Join CSKIA India for world-class Shotokan karate training in Whitefield, Bangalore." />
+  <meta property="og:description" content="Join CSKIA India for world-class Shotokan karate training in Bangalore." />
   <meta property="og:image" content="https://shotokankarate.in/images/logo.jpg" />
   <meta property="og:url" content="https://shotokankarate.in" />
   <meta name="theme-color" content="#8B0000" />
+  <!-- Favicon / title logo -->
+  <link rel="icon" href="./images/shotokan-logo.png" sizes="32x32" />
+  <link rel="icon" href="./images/shotokan-logo.png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="./images/shotokan-logo.png" />
+  <meta name="msapplication-TileImage" content="./images/shotokan-logo.png" />
   
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" as="style" onload="this.rel='stylesheet'" />
   <noscript>
@@ -18,6 +23,53 @@
   </noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
+  <style>
+:root {
+  --bg: #ffffff;
+  --panel: #0f1112;
+  --card: #12181a;
+  --text: #111111;
+  --muted: #7b7b7b;
+  --accent: #8B0000;
+  --accent-2: #b71c1c;
+  --gold: #c79b4b;
+  --radius: 12px;
+  --maxw: 1200px;
+  --glass: rgba(255,255,255,0.03);
+  font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode (default) */
+html[data-theme="dark"],
+html {
+  --bg: #000000;
+  --panel: #0f1112;
+  --card: #12181a;
+  --text: #ffffff;
+  --muted: #a0a0a0;
+  --accent: #8B0000;
+  --accent-2: #b71c1c;
+  --gold: #c79b4b;
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Light mode */
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --panel: #f5f5f5;
+  --card: #e8e8e8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8B0000;
+  --accent-2: #b71c1c;
+  --gold: #c79b4b;
+  --glass: rgba(0,0,0,0.03);
+}
+  </style>
+
   <link rel="stylesheet" href="./styles.css" />
 
   <script type="application/ld+json">
@@ -28,9 +80,8 @@
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "No.148, Shanthi Nilaya, 5th Cross",
-        "addressLocality": "Whitefield",
         "addressRegion": "Bangalore",
-        "postalCode": "560066",
+        "postalCode": "560070",
         "addressCountry": "IN"
       },
       "telephone": "+919611693004",
@@ -58,7 +109,7 @@
     <div class="nav-row container" role="navigation" aria-label="Main navigation">
       <div class="brand">
         <a href="index.html" aria-label="Homepage">
-          <img src="./images/cskia-logo.jpg" alt="CSKIA logo" loading="lazy" onerror="this.src='https://via.placeholder.com/48'" />
+          <img src="./images/shotokan-logo.png" alt="Shotokan Karate India Association logo" loading="lazy" onerror="this.src='https://via.placeholder.com/48'" />
         </a>
         <h1>Champion Shotokan Karate Indian Association</h1>
       </div>
@@ -106,7 +157,7 @@
         <div class="hero-inner">
           <div class="hero-copy">
             <h2 class="hero-title">Champion Shotokan Karate Indian Association</h2>
-            <p class="hero-lead">Traditional Shotokan training with a modern, safety-first approach. Join classes in Whitefield, Bangalore — programs for kids and adults led by certified instructors.</p>
+            <p class="hero-lead">Traditional Shotokan training with a modern, safety-first approach. Join classes in Bangalore — programs led by certified instructor.</p>
           </div>
           <div class="hero-visual">
             <!-- Image moved to About section -->
@@ -117,7 +168,7 @@
     <!-- About - Moved to first position -->
     <section id="about" class="container" aria-label="About">
       <div class="section-head"><h3>About CSKIA</h3></div>
-      <p class="muted">A Professional Karate Club in Bangalore, Champion Shotokan Karate Indian Association (CSKIA) preserves traditional Shotokan karate with modern coaching techniques, emphasizing kata, kumite, and character development for all ages.</p>
+      <p class="muted">A Professional Karate Club in Bangalore, Champion Shotokan Karate Indian Association (CSKIA) preserves traditional Shotokan karate with modern coaching techniques, emphasizing kata, kumite for all ages.</p>
     </section>
 
     <!-- Stats - Moved up for trust building -->
@@ -125,19 +176,19 @@
       <div class="section-head"><h3>Our Achievements</h3></div>
       <div class="stats">
         <div class="stat-item">
-          <h4 class="counter" data-target="17">0</h4>
+          <h4 class="counter" data-target="20">20</h4>
           <p class="muted">Years of Excellence</p>
         </div>
         <div class="stat-item">
-          <h4 class="counter" data-target="10000">0</h4>
+          <h4 class="counter" data-target="10000">10000</h4>
           <p class="muted">Students Trained</p>
         </div>
         <div class="stat-item">
-          <h4 class="counter" data-target="100">0</h4>
+          <h4 class="counter" data-target="100">100</h4>
           <p class="muted">Black Belt Students</p>
         </div>
         <div class="stat-item">
-          <h4 class="counter" data-target="100">0</h4>
+          <h4 class="counter" data-target="100">100</h4>
           <p class="muted">Events Organized</p>
         </div>
       </div>
@@ -168,7 +219,7 @@
           </div>
           <div class="instructor-card-content">
             <h5>Shihan Satvik M Rao — 5th Dan</h5>
-            <p class="muted">CHAIRMAN - Sports Commission of Karate-do Association of Karnataka, a Member of the Sports Commission for the Karate India Organisation (KIO) and a great mentor.</p>
+            <p class="muted">CHAIRMAN - Sports Commission of Karate-do Association of Karnataka, a Member of the Sports Commission for the Karate India Organisation (KIO),Treasurer - Karnataka State karate Association and a great mentor.</p>
           </div>
         </div>
       </div>
@@ -180,18 +231,18 @@
       <div class="grid cols-2">
         <div class="card">
           <h4>Kata 8 — Tekki Shodan</h4>
-          <div style="border-radius:10px;overflow:hidden;background:#000;position:relative;padding-bottom:56.25%;height:0">
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/ZErnLlRWsbk?rel=0" title="Tekki Shodan Kata Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="video-wrap">
+            <iframe class="embed" src="https://www.youtube.com/embed/ZErnLlRWsbk?rel=0" title="Tekki Shodan Kata Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p class="muted" style="margin-top:10px">Master the foundational horse-riding stance and powerful close-range techniques.</p>
+          <p class="muted">Master the foundational horse-riding stance and powerful close-range techniques.</p>
           <a href="https://www.youtube.com/watch?v=ZErnLlRWsbk" target="_blank" class="btn btn-secondary" style="margin-top:10px;width:100%"><i class="fab fa-youtube"></i> Watch on YouTube</a>
         </div>
         <div class="card">
           <h4>Challenge 9</h4>
-          <div style="border-radius:10px;overflow:hidden;background:#000;position:relative;padding-bottom:56.25%;height:0">
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/Ckok6vMQmM8?rel=0" title="CHALLENGE 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="video-wrap">
+            <iframe class="embed" src="https://www.youtube.com/embed/Ckok6vMQmM8?rel=0" title="CHALLENGE 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p class="muted" style="margin-top:10px">Push your limits with this high-intensity karate fitness challenge.</p>
+          <p class="muted">Push your limits with this high-intensity karate fitness challenge.</p>
           <a href="https://www.youtube.com/watch?v=Ckok6vMQmM8" target="_blank" class="btn btn-secondary" style="margin-top:10px;width:100%"><i class="fab fa-youtube"></i> Watch on YouTube</a>
         </div>
       </div>
@@ -202,13 +253,8 @@
       <div class="location-finder">
         <h4>Our Dojos</h4>
         <p>Select a dojo below to view its details and schedule.</p>
-        <div class="location-buttons">
-          <button class="location-btn active" id="whitefieldBtn">
-            <i class="fas fa-map-marker-alt"></i> Homo Dojo (Whitefield)
-          </button>
-          <button class="location-btn" id="silveroakBtn">
-            <i class="fas fa-map-marker-alt"></i> Silver Oak (Marathahalli)
-          </button>
+        <div id="dojoList" class="dojo-list" aria-label="Dojo list" style="max-height:320px;overflow:auto;padding-right:6px">
+          <!-- populated by script.js -->
         </div>
       </div>
       <div class="grid cols-2">
@@ -225,18 +271,14 @@
         <div class="card">
           <div id="selectedDojoInfo" class="selected-dojo-info">
             <strong id="dojoTitle">Homo Dojo</strong><br>
-            <span id="dojoAddress" class="muted">No.148, Shanthi Nilaya, 5th Cross, Whitefield, Bangalore 560066</span>
+            <span id="dojoAddress" class="muted"></span>
           </div>
+          
           <h4>Dojo Locations</h4>
           <p class="muted">We currently have training centers at the following locations:</p>
           <div class="dojo-list-contact">
-            <div class="dojo-item-contact selected" data-index="0">
-              <div class="dojo-name-contact">Homo Dojo (Main)</div>
-              <div class="dojo-address-contact">No.148, Shanthi Nilaya, 5th Cross, Whitefield, Bangalore 560066</div>
-            </div>
-            <div class="dojo-item-contact" data-index="1">
-              <div class="dojo-name-contact">Silver Oak Branch</div>
-              <div class="dojo-address-contact">Varthur Main Rd, Silver Springs Layout, Munnekollal, Marathahalli, Bengaluru, Karnataka 560037</div>
+            <div id="dojoLocations" class="dojo-locations">
+              <!-- populated by script.js -->
             </div>
           </div>
         </div>
@@ -251,8 +293,8 @@
       <div id="scheduleTableContainer">
         <table style="width:100%;border-collapse:collapse">
           <thead>
-            <tr style="background:var(--accent);color:#fff">
-              <th style="padding:12px;text-align:left">Class</th>
+            <tr style="background:var(--accent);color:#ffffff">
+              
               <th style="padding:12px;text-align:left">Day</th>
               <th style="padding:12px;text-align:left">Time</th>
               <th style="padding:12px;text-align:left">Location</th>
@@ -294,7 +336,7 @@
   <footer role="contentinfo">
     <div class="footer-grid container">
       <div>
-        <a href="index.html" class="footer-logo"><img src="./images/cskia-logo.jpg" alt="CSKIA logo" style="width:120px" loading="lazy" onerror="this.src='https://via.placeholder.com/120'" /></a>
+        <a href="index.html" class="footer-logo"><img src="c:\Users\ASUS\Downloads\cskia\img cskia\cskia logo.jpeg" alt="CSKIA logo" style="width:120px" loading="lazy" onerror="this.src='https://via.placeholder.com/120'" /></a>
         <p class="muted">Champion Shotokan Karate Indian Association — training and community upcoming events in Bangalore. Contact: <a href="tel:+919611693004">+91 96116 93004</a></p>
       </div>
       <div>
@@ -316,12 +358,90 @@
       </div>
     </div>
     <div style="max-width:var(--maxw);margin:18px auto 0;padding:0 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-      <small style="color:var(--muted)">© 2025 Champion Shotokan Karate Indian Association. All Rights Reserved. made by prathik. <a href="/privacy" class="muted">Privacy Policy</a></small>
+      <small style="color:var(--muted)">© 2025 Champion Shotokan Karate Indian Association. All Rights Reserved. made by PRATHIK BALAJI. <a href="/privacy" class="muted">Privacy Policy</a></small>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="data.js"></script>
+  <script>
+    // Inlined from data.js - Dojo configuration data
+    const DOJOS = [
+      {
+        id: 'homo-dojo',
+        name: 'Homo Dojo (Padmanmanagar)',
+        address: 'Padmanabhanagar, Bangalore 560070',
+        schedule: [
+          { day: 'Saturday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Sunday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Monday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Tuesday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'krpuram',
+        name: 'Kr Puram',
+        address: 'KR Puram, Bangalore 560049',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'Girinagar',
+        name: 'Girinagar',
+        address: 'Girinagar, Bangalore',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'Kanakpura',
+        name: 'Kanakpura',
+        address: 'Kanakpura Road, Bangalore',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'Bidadi',
+        name: 'Bidadi',
+        address: 'Bidadi, Bangalore',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'Yeshwantpur',
+        name: 'Yeshwantpur',
+        address: 'Yeshwantpur, Bangalore',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'Nandini Layout',
+        name: 'Nandini Layout',
+        address: 'Nandini Layout, Bangalore',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      },
+      {
+        id: 'Kumarswamy Layout',
+        name: 'Kumarswamy Layout',
+        address: 'Kumarswamy Layout, Bangalore',
+        schedule: [
+          { day: 'Wednesday', time: '4:30 PM - 5:30 PM' },
+          { day: 'Thursday', time: '4:30 PM - 5:30 PM' }
+        ]
+      }
+    ];
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

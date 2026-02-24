@@ -8,17 +8,15 @@ function selectDojo(dojo) {
   document.getElementById('dojoAddress').textContent = dojo.address;
 
   // Update selected style on list items
-  document.querySelectorAll('.dojo-item-contact').forEach(item => item.classList.remove('selected'));
+  document.querySelectorAll('.dojo-pill').forEach(item => item.classList.remove('active'));
   const index = DOJOS.indexOf(dojo);
-  document.querySelectorAll('.dojo-item-contact')[index].classList.add('selected');
+  const pill = document.querySelector(`.dojo-pill[data-index="${index}"]`);
+  if (pill) pill.classList.add('active');
 
-  // Update active button
-  document.querySelectorAll('.location-btn').forEach(btn => btn.classList.remove('active'));
-  if (dojo.id === 'homudojo') {
-    document.getElementById('whitefieldBtn').classList.add('active');
-  } else {
-    document.getElementById('silveroakBtn').classList.add('active');
-  }
+  // highlight location card in the right column
+  document.querySelectorAll('.dojo-location-card').forEach(card => card.classList.remove('selected'));
+  const loc = document.querySelector(`.dojo-location-card[data-index="${index}"]`);
+  if (loc) loc.classList.add('selected');
 }
 
 // Update schedule table in modal
@@ -28,7 +26,6 @@ function updateSchedule() {
   selectedDojo.schedule.forEach(c => {
     const row = tbody.insertRow();
     row.innerHTML = `
-      <td style="padding:12px">${c.className}</td>
       <td style="padding:12px">${c.day}</td>
       <td style="padding:12px">${c.time}</td>
       <td style="padding:12px"><strong>${selectedDojo.name}</strong></td>
@@ -38,17 +35,36 @@ function updateSchedule() {
 
 // Initialize event listeners and functionality
 document.addEventListener('DOMContentLoaded', () => {
-  // Dojo selection buttons
-  document.getElementById('whitefieldBtn').addEventListener('click', () => selectDojo(DOJOS[0]));
-  document.getElementById('silveroakBtn').addEventListener('click', () => selectDojo(DOJOS[1]));
+  // Render dojo list and location cards from DOJOS
+  function renderDojoList() {
+    const list = document.getElementById('dojoList');
+    const locations = document.getElementById('dojoLocations');
+    if (!list || !locations) return;
+    list.innerHTML = '';
+    locations.innerHTML = '';
+    DOJOS.forEach((d, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'dojo-pill';
+      btn.setAttribute('data-index', i);
+      btn.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${d.name}`;
+      btn.addEventListener('click', () => selectDojo(d));
+      list.appendChild(btn);
 
-  // Make dojo list items clickable
-  document.querySelectorAll('.dojo-item-contact').forEach(item => {
-    item.addEventListener('click', () => {
-      const index = parseInt(item.dataset.index);
-      selectDojo(DOJOS[index]);
+      const card = document.createElement('div');
+      card.className = 'dojo-location-card';
+      card.setAttribute('data-index', i);
+      card.innerHTML = `
+        <div style="padding:18px; border-radius:10px; background:var(--card); box-shadow: inset 0 -2px 0 rgba(255,255,255,0.02);">
+          <strong>${d.name}</strong>
+          <div class="muted" style="margin-top:8px">${d.address || ''}</div>
+        </div>
+      `;
+      card.addEventListener('click', () => selectDojo(d));
+      locations.appendChild(card);
     });
-  });
+  }
+
+  renderDojoList();
 
   // Schedule modal
   document.getElementById('openSchedule').addEventListener('click', e => {
@@ -114,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const tick = now => {
       const progress = Math.min((now - start) / duration, 1);
       current = Math.floor(progress * target);
-      el.textContent = current;
+      el.textContent = current + '+';
       if (progress < 1) {
         requestAnimationFrame(tick);
       } else {
-        el.textContent = target;
+        el.textContent = target + '+';
       }
     };
     requestAnimationFrame(tick);
