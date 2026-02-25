@@ -1,17 +1,17 @@
 /* Light mode (default) - Karate themed */
 :root,
 html {
-  --bg: #f5f5f0;
-  --panel: #2c2c2c;
-  --card: #ffffff;
-  --text: #1a1a1a;
-  --muted: #666666;
+  --bg: #000000;
+  --panel: #0c1112;
+  --card: #2f3334;
+  --text: #ffffff;
+  --muted: #9aa0a0;
   --accent: #8B0000;
   --accent-2: #b71c1c;
   --gold: #c79b4b;
   --radius: 12px;
   --maxw: 1200px;
-  --glass: rgba(139,0,0,0.05);
+  --glass: rgba(255,255,255,0.03);
   font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -437,22 +437,52 @@ nav a:hover, nav a:focus {
 .dojo-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 6px 0;
+  gap: 10px;
+  padding: 8px 0 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(199,155,75,0.4) rgba(255,255,255,0.02);
+}
+
+.dojo-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dojo-list::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+}
+
+.dojo-list::-webkit-scrollbar-thumb {
+  background: rgba(199,155,75,0.4);
+  border-radius: 10px;
+}
+
+.dojo-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(199,155,75,0.6);
 }
 
 .dojo-pill {
-  background: rgba(255,255,255,0.02);
+  background: #0f1112;
   color: var(--muted);
-  border: 1px solid rgba(255,255,255,0.04);
-  padding: 12px 16px;
-  border-radius: 12px;
+  border: 1px solid rgba(199,155,75,0.2);
+  padding: 16px 20px;
+  border-radius: 14px;
   text-align: left;
   cursor: pointer;
   font-weight: 700;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.dojo-pill:hover {
+  background: rgba(199,155,75,0.08);
+  border-color: rgba(199,155,75,0.4);
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(139,0,0,0.2);
 }
 
 .dojo-pill i {
@@ -461,11 +491,11 @@ nav a:hover, nav a:focus {
 }
 
 .dojo-pill.active {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, #c71c1c 100%);
   color: #fff;
-  border-color: rgba(139,0,0,0.9);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.2);
+  box-shadow: 0 12px 32px rgba(139,0,0,0.5);
+  transform: translateY(-6px);
 }
 
 .dojo-locations {
@@ -483,18 +513,20 @@ nav a:hover, nav a:focus {
 
 .dojo-location-card > div {
   background: #2f3334; /* grey inner card */
-  padding: 18px 20px;
-  border-radius: 10px;
+  padding: 20px 22px;
+  border-radius: 12px;
   color: #e6e6e6;
   width: 100%;
+  font-size: 1rem;
+  transition: box-shadow 220ms ease, transform 220ms ease;
 }
 
 .dojo-location-card > div strong {
   display: block;
   color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
 }
 
 .dojo-location-card > div .muted {
@@ -520,13 +552,123 @@ nav a:hover, nav a:focus {
 .dojo-location-card.selected > div {
   background: #3a3f40; /* slightly darker grey when selected */
   color: #ffffff;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.65);
+  transform: translateY(-2px);
 }
 
+/* Contact / Dojo header styling to match screenshot */
+#contact .selected-dojo-info {
+  padding: 22px 18px;
+  margin-bottom: 18px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+#contact #dojoTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#contact #dojoAddress {
+  color: var(--muted);
+}
+
+/* Make the Dojo Locations heading more prominent */
+#contact h4 {
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+/* Slightly increase spacing between inner location cards */
+.dojo-locations { gap: 16px; }
+
+
+/* Panel wrapper to mimic the screenshot large rounded sections */
 @media (max-width: 900px) {
   .dojo-list { gap: 10px; }
   .dojo-pill { padding: 10px 12px; }
 }
+
+/* Panel wrapper to mimic screenshot large rounded sections */
+/* Panel wrapper to match screenshot */
+.panel-shell {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 28px 30px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.035);
+  margin-bottom: 28px;
+}
+
+.panel-shell h4 { color: var(--gold); margin-top:0 }
+
+/* Selected dojo header inside panel */
+.panel-shell .selected-dojo-info {
+  padding: 0 0 14px 0;
+  margin-bottom: 14px;
+}
+
+.panel-shell #dojoTitle {
+  font-size: 1.75rem;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.panel-shell #dojoAddress { color: var(--muted); margin-top:6px }
+
+/* Dojo location inner cards (rounded grey) */
+/* Compact dojo location styling (reduced padding, smaller type, tighter gaps) */
+.dojo-location-card {
+  position: relative;
+  padding-left: 22px; /* space for accent */
+}
+
+.dojo-location-card > div {
+  background: var(--card);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #e6e6e6;
+  width: 100%;
+  transition: box-shadow .14s ease, transform .14s ease;
+  font-size: 0.95rem;
+}
+
+.dojo-location-card > div strong { color: #ffffff; font-weight:800; font-size:1rem }
+
+.dojo-location-card { margin-bottom: 8px }
+
+.dojo-location-card.selected::before {
+  /* thin gold accent bar sitting outside the grey inner card */
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  bottom: 12px;
+  width: 6px;
+  background: var(--gold);
+  border-radius: 6px;
+}
+
+.dojo-location-card.selected > div { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.55); background: #3a3f40 }
+
+/* Make dojo list pills stacked */
+.dojo-list { max-width: 260px; gap:8px }
+.dojo-pill { display:block; width:100%; text-align:left; padding:8px 10px }
+
+/* Contact panel tweaks */
+.contact-panel .contact-actions .btn { min-width: 200px }
+
+/* Ensure button text in contact panel stays white (overrides link color rules) */
+.contact-panel .btn { color: #ffffff; }
+
+/* Contact links in red accent */
+#contact a[href^="tel"],
+#contact a[href^="mailto"] { color: var(--accent-2); font-weight:700 }
+
   color: #fff;
   font-weight: 600;
   border: none;
@@ -627,9 +769,35 @@ section:not(#home).visible {
   font-family: 'Oswald', sans-serif;
   margin: 0;
   font-size: 1.6rem;
-  color: var(--text);
+  color: #111111;
   border-left: 6px solid var(--accent);
   padding-left: 14px;
+  font-weight: 700;
+  line-height: 1.05;
+  text-shadow: 2px 2px 0 rgba(199,155,75,0.12), 0 1px 0 rgba(0,0,0,0.2);
+}
+
+/* Make the About section heading explicitly black */
+/* Make the About section heading the same color as the card background */
+#about .section-head h3 {
+  color: #111111 !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+  padding-left: 14px !important;
+  border-left: 6px solid var(--accent) !important;
+  /* subtle gold offset to match the image */
+  text-shadow: 2px 2px 0 rgba(199,155,75,0.12), 0 1px 0 rgba(0,0,0,0.2);
+}
+
+/* Make all headings black in light theme to match the Training heading */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6 {
+  color: #111111;
 }
 
 .muted {
@@ -900,14 +1068,14 @@ section p {
 
 /* Location Finder */
 .location-finder {
-  background: linear-gradient(135deg, var(--card), #f8f8f8);
+  background: linear-gradient(135deg, rgba(15,17,18,0.8), rgba(47,51,52,0.6));
   color: var(--text);
   padding: 28px;
   border-radius: 16px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 24px;
-  box-shadow: 0 6px 20px rgba(139,0,0,0.1);
-  border: 2px solid rgba(139,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(199,155,75,0.2);
 }
 
 /* Training cards (styled like the provided screenshot) */
@@ -966,10 +1134,11 @@ section p {
 }
 
 .location-finder h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--accent);
+  margin: 0 0 6px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: 'Oswald', sans-serif;
 }
 
 .location-finder p {

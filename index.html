@@ -25,11 +25,11 @@
   
   <style>
 :root {
-  --bg: #ffffff;
-  --panel: #0f1112;
-  --card: #12181a;
-  --text: #111111;
-  --muted: #7b7b7b;
+  --bg: #000000;
+  --panel: #0c1112;
+  --card: #2f3334;
+  --text: #ffffff;
+  --muted: #9aa0a0;
   --accent: #8B0000;
   --accent-2: #b71c1c;
   --gold: #c79b4b;
@@ -109,7 +109,7 @@ html[data-theme="light"] {
     <div class="nav-row container" role="navigation" aria-label="Main navigation">
       <div class="brand">
         <a href="index.html" aria-label="Homepage">
-          <img src="./images/shotokan-logo.png" alt="Shotokan Karate India Association logo" loading="lazy" onerror="this.src='https://via.placeholder.com/48'" />
+          <img src="./images/cskia-logo.jpeg" alt="Champion Shotokan Karate Indian Association logo" loading="lazy" onerror="this.src='https://via.placeholder.com/48'" />
         </a>
         <h1>Champion Shotokan Karate Indian Association</h1>
       </div>
@@ -250,41 +250,48 @@ html[data-theme="light"] {
     <!-- Contact -->
     <section id="contact" class="container" aria-label="Contact">
       <div class="section-head"><h3>Contact & Location</h3></div>
-      <div class="location-finder">
-        <h4>Our Dojos</h4>
-        <p>Select a dojo below to view its details and schedule.</p>
-        <div id="dojoList" class="dojo-list" aria-label="Dojo list" style="max-height:320px;overflow:auto;padding-right:6px">
-          <!-- populated by script.js -->
+
+      <!-- Dojos List Card -->
+      <div class="panel-shell dojo-panel">
+        <div class="location-finder">
+          <h4>Our Dojos</h4>
+          <p>Select a dojo below to view its details and schedule.</p>
+          <div id="dojoList" class="dojo-list" aria-label="Dojo list" style="max-height:220px;overflow:auto;padding-right:6px">
+            <!-- populated by script.js -->
+          </div>
         </div>
       </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h4>Get in Touch</h4>
-          <p class="muted">Contact us to enroll or inquire about classes.</p>
-          <p><strong>Email:</strong> <a href="mailto:Senseisatvik@gmail.com">Senseisatvik@gmail.com</a></p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="tel:+919611693004"><i class="fas fa-phone"></i> Call Now</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/919611693004?text=Hi%2C%20I%27m%20interested%20in%20karate%20classes" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          </div>
-          <a class="btn btn-secondary" id="openSchedule" href="#" style="margin-top: 12px;"><i class="fas fa-calendar"></i> View Schedule</a>
+
+      <!-- Selected Dojo Info Card -->
+      <div class="panel-shell dojo-info-card">
+        <div id="selectedDojoInfo" class="selected-dojo-info">
+          <strong id="dojoTitle">Homo Dojo</strong>
+          <div id="dojoAddress" class="muted" style="display:block;margin-top:8px">No.148, Shanthi Nilaya, 5th Cross, Whitefield, Bangalore 560066</div>
         </div>
-        <div class="card">
-          <div id="selectedDojoInfo" class="selected-dojo-info">
-            <strong id="dojoTitle">Homo Dojo</strong><br>
-            <span id="dojoAddress" class="muted"></span>
-          </div>
-          
-          <h4>Dojo Locations</h4>
-          <p class="muted">We currently have training centers at the following locations:</p>
-          <div class="dojo-list-contact">
-            <div id="dojoLocations" class="dojo-locations">
-              <!-- populated by script.js -->
-            </div>
+
+        <h4 style="margin-top:18px">Dojo Locations</h4>
+        <p class="muted">We currently have training centers at the following locations:</p>
+        <div class="dojo-list-contact">
+          <div id="dojoLocations" class="dojo-locations">
+            <!-- populated by script.js -->
           </div>
         </div>
+      </div>
+
+      <!-- Contact actions Card -->
+      <div class="panel-shell contact-panel">
+        <h4>Get in Touch</h4>
+        <p class="muted">Contact us to enroll or inquire about classes.</p>
+        <p><strong>Phone:</strong> <a href="tel:+919611693004">+91 96116 93004</a></p>
+        <p><strong>Email:</strong> <a href="mailto:Senseisatvik@gmail.com">Senseisatvik@gmail.com</a></p>
+        <div class="contact-actions" style="margin-top:6px">
+          <a class="btn btn-primary" href="tel:+919611693004"><i class="fas fa-phone"></i> Call Now</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/919611693004?text=Hi%2C%20I%27m%20interested%20in%20karate%20classes" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <a class="btn btn-secondary" id="openSchedule" href="#" style="margin-top: 18px;"><i class="fas fa-calendar"></i> View Schedule</a>
       </div>
     </section>
-  </main>
+  </main> 
   <!-- Schedule Modal -->
   <div class="modal" id="scheduleModal" aria-hidden="true">
     <div class="sheet">

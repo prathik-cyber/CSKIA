@@ -275,14 +275,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Theme toggle functionality
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
-  
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem('theme') || 'light';
+
+  // Load saved theme from localStorage (default to dark to match screenshot)
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+  if (themeToggle) updateThemeIcon(savedTheme);
 
   function updateThemeIcon(theme) {
+    if (!themeToggle) return;
     const icon = themeToggle.querySelector('i');
+    if (!icon) return;
     if (theme === 'dark') {
       icon.classList.remove('fa-sun');
       icon.classList.add('fa-moon');
@@ -292,12 +294,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = html.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+  }
 });
